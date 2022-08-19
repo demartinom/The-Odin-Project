@@ -29,11 +29,7 @@ function playRound() {
     return "You tied!";
   }
 }
-
-function playGame() {
-  for (let i = 0; i < 5; i++) {
-    console.log(playRound());
-  }
+function result() {
   if (playerScore > computerScore) {
     console.log("The player wins!");
   } else if (playerScore < computerScore) {
@@ -41,6 +37,12 @@ function playGame() {
   } else {
     console.log("It's a tie!");
   }
+}
+function playGame() {
+  for (let i = 0; i < 5; i++) {
+    console.log(playRound());
+  }
+  result();
 }
 
 playGame();
