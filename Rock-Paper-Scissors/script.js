@@ -34,5 +34,13 @@ function playGame() {
   for (let i = 0; i < 5; i++) {
     console.log(playRound());
   }
+  if (playerScore > computerScore) {
+    console.log("The player wins!");
+  } else if (playerScore < computerScore) {
+    console.log("The computer wins!");
+  } else {
+    console.log("It's a tie!");
+  }
 }
+
 playGame();
