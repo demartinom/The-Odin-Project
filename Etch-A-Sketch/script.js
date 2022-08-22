@@ -21,6 +21,16 @@ const windowFunctions = () => {
     gridContainer.style.gridTemplateRows = `repeat(${gridSize}, 40px)`;
   };
 
+  const changeColor = () => {
+    box.style.backgroundColor = "green";
+  };
+
   createGrid(defaultSize);
+  let gridBoxes = document.querySelectorAll(".grid-box");
+  gridBoxes.forEach((box) => {
+    box.addEventListener("mouseover", function () {
+      box.style.background = "green";
+    });
+  });
 };
 window.onload = windowFunctions;
