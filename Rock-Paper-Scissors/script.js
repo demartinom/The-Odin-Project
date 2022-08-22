@@ -39,10 +39,15 @@ function result() {
   }
 }
 function playGame() {
-  for (let i = 0; i < 5; i++) {
-    console.log(playRound());
-  }
+  // for (let i = 0; i < 5; i++) {
+  //   console.log(playRound());
+  // }
   result();
 }
 
-playGame();
+let buttons = document.querySelectorAll("button");
+buttons.forEach((button) => {
+  button.addEventListener("click", function () {
+    let playerSelection = button.innerText;
+  });
+});
