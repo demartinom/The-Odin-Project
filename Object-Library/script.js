@@ -3,7 +3,9 @@
 //     return `${this.title} by ${this.author}, ${this.pages}, ${this.read}`;
 //   },
 // };
-
+let libContainer = document.querySelector(".library");
+let newBookButton = document.querySelector(".new-book");
+let bookForm = document.querySelector('.add-book')
 let myLibrary = [];
 
 function Book(title, author, pages, read) {
@@ -19,15 +21,35 @@ const addBookToLibrary = (book) => {
 
 const displayLibrary = () => {
   for (let i = 0; i < myLibrary.length; i++) {
-    return myLibrary[i];
+    createCard(myLibrary[i]);
   }
 };
 
-let libContainer = document.querySelector(".library");
+const newBookForm = () => {
+};
+
+newBookButton.addEventListener("click", newBookForm);
 
 const createCard = (book) => {
   let newCard = document.createElement("div");
   newCard.setAttribute("class", "book-card");
-  newCard.innerText = `Name: ${book.title} Author: ${book.author} # of pages: ${book.pages} Have I read it?: ${book.read}`;
+  newCard.innerHTML = `Name: ${book.title} <br> Author: ${book.author} <br> # of pages: ${book.pages} <br> Have I read it?: ${book.read}`;
   libContainer.appendChild(newCard);
+  let deletebutton = document.createElement("button");
+  deletebutton.innerText = "Delete Book";
+  newCard.appendChild(deletebutton);
+  deletebutton.addEventListener("click", function () {
+    newCard.remove();
+  });
 };
+
+const hobbit = new Book("The Hobbit", "Tolkein", "100", "read");
+addBookToLibrary(hobbit);
+const braveNewWorld = new Book(
+  "Brave New World",
+  "Aldous Huxley",
+  "150",
+  "read"
+);
+addBookToLibrary(braveNewWorld);
+displayLibrary();
