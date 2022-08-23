@@ -22,8 +22,3 @@ const displayLibrary = () => {
     return myLibrary[i];
   }
 };
-
-const hobbit = new Book("The Hobbit", "JR Tolken", "100", "read");
-
-addBookToLibrary(hobbit);
-console.log(displayLibrary());
