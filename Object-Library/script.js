@@ -22,3 +22,12 @@ const displayLibrary = () => {
     return myLibrary[i];
   }
 };
+
+let libContainer = document.querySelector(".library");
+
+const createCard = (book) => {
+  let newCard = document.createElement("div");
+  newCard.setAttribute("class", "book-card");
+  newCard.innerText = `Name: ${book.title} Author: ${book.author} # of pages: ${book.pages} Have I read it?: ${book.read}`;
+  libContainer.appendChild(newCard);
+};
