@@ -1,0 +1,22 @@
+.library {
+  display: flex;
+  gap: 5px;
+}
+
+.book-card {
+  border: 1px solid black;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.new-book {
+  margin-bottom: 10px;
+}
+.add-book {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  gap: 10px;
+  margin-bottom: 10px;
+}
