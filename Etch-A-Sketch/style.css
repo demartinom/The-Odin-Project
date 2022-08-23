@@ -2,6 +2,8 @@
     margin-top: 10px;
   display: grid;
   gap: 1px;
+  max-width: 50px;
+  max-height: 50px;
 }
 
 .grid-box {
