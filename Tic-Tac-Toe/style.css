@@ -1,8 +1,9 @@
-body{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 .game-board {
   display: inline-grid;
@@ -19,4 +20,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.restart {
+  margin-bottom: 10px;
 }
