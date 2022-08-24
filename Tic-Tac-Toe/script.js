@@ -19,6 +19,7 @@ const player2 = player("Jeff", "O");
 let turnCounter = 0;
 
 const boardSquare = document.querySelectorAll(".square");
+const resultDiv = document.querySelector(".game-result");
 
 function clickEvent(event) {
   let squareValue = document.createElement("p");
@@ -29,11 +30,11 @@ function clickEvent(event) {
     squareValue.innerText = player2.playerTile();
     turnCounter++;
   }
-
   event.appendChild(squareValue);
 }
 
-const checkWin = () => {
+const checkWin = (event) => {
+  let playerWin = document.createElement("h1");
   if (
     (boardSquare[0].innerText === "X" &&
       boardSquare[1].innerText === "X" &&
@@ -60,7 +61,8 @@ const checkWin = () => {
       boardSquare[4].innerText === "X" &&
       boardSquare[6].innerText === "X")
   ) {
-    console.log("Player 1 Wins!");
+    playerWin.innerText = "Player 1 wins!";
+    resultDiv.appendChild(playerWin);
   } else if (
     (boardSquare[0].innerText === "O" &&
       boardSquare[1].innerText === "O" &&
@@ -87,7 +89,8 @@ const checkWin = () => {
       boardSquare[4].innerText === "O" &&
       boardSquare[6].innerText === "O")
   ) {
-    console.log("Player 2 Wins!");
+    playerWin.innerText = "Player 2 wins!";
+    resultDiv.appendChild(playerWin);
   }
 };
 boardSquare.forEach((square) => {
