@@ -35,11 +35,59 @@ function clickEvent(event) {
 
 const checkWin = () => {
   if (
-    boardSquare[0].innerText === "X" &&
-    boardSquare[1].innerText === "X" &&
-    boardSquare[2].innerText === "X"
+    (boardSquare[0].innerText === "X" &&
+      boardSquare[1].innerText === "X" &&
+      boardSquare[2].innerText === "X") ||
+    (boardSquare[0].innerText === "X" &&
+      boardSquare[3].innerText === "X" &&
+      boardSquare[6].innerText === "X") ||
+    (boardSquare[3].innerText === "X" &&
+      boardSquare[4].innerText === "X" &&
+      boardSquare[5].innerText === "X") ||
+    (boardSquare[1].innerText === "X" &&
+      boardSquare[4].innerText === "X" &&
+      boardSquare[7].innerText === "X") ||
+    (boardSquare[6].innerText === "X" &&
+      boardSquare[7].innerText === "X" &&
+      boardSquare[8].innerText === "X") ||
+    (boardSquare[2].innerText === "X" &&
+      boardSquare[5].innerText === "X" &&
+      boardSquare[8].innerText === "X") ||
+    (boardSquare[0].innerText === "X" &&
+      boardSquare[4].innerText === "X" &&
+      boardSquare[8].innerText === "X") ||
+    (boardSquare[2].innerText === "X" &&
+      boardSquare[4].innerText === "X" &&
+      boardSquare[6].innerText === "X")
   ) {
-    console.log("winner");
+    console.log("Player 1 Wins!");
+  } else if (
+    (boardSquare[0].innerText === "O" &&
+      boardSquare[1].innerText === "O" &&
+      boardSquare[2].innerText === "O") ||
+    (boardSquare[0].innerText === "O" &&
+      boardSquare[3].innerText === "O" &&
+      boardSquare[6].innerText === "O") ||
+    (boardSquare[3].innerText === "O" &&
+      boardSquare[4].innerText === "O" &&
+      boardSquare[5].innerText === "O") ||
+    (boardSquare[1].innerText === "O" &&
+      boardSquare[4].innerText === "O" &&
+      boardSquare[7].innerText === "O") ||
+    (boardSquare[6].innerText === "O" &&
+      boardSquare[7].innerText === "O" &&
+      boardSquare[8].innerText === "O") ||
+    (boardSquare[2].innerText === "O" &&
+      boardSquare[5].innerText === "O" &&
+      boardSquare[8].innerText === "O") ||
+    (boardSquare[0].innerText === "O" &&
+      boardSquare[4].innerText === "O" &&
+      boardSquare[8].innerText === "O") ||
+    (boardSquare[2].innerText === "O" &&
+      boardSquare[4].innerText === "O" &&
+      boardSquare[6].innerText === "O")
+  ) {
+    console.log("Player 2 Wins!");
   }
 };
 boardSquare.forEach((square) => {
