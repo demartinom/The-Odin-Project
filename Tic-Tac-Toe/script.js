@@ -15,11 +15,19 @@ const player = (name, tile) => {
   return { playerName, playerTile };
 };
 const player1 = player("Matt", "X");
+const player2 = player("Jeff", "O");
+let turnCounter = 0;
+
 const boardSquare = document.querySelectorAll(".square");
 
 function clickEvent(event) {
   let squareValue = document.createElement("p");
-  squareValue.innerText = player1.playerTile();
+  if (turnCounter % 2 === 0 && event.innerText === "") {
+    squareValue.innerText = player1.playerTile();
+  } else if (turnCounter % 2 != 0 && event.innerText === "") {
+    squareValue.innerText = player2.playerTile();
+  }
+  turnCounter++;
   event.appendChild(squareValue);
 }
 boardSquare.forEach((square) => {
