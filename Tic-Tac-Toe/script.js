@@ -24,14 +24,27 @@ function clickEvent(event) {
   let squareValue = document.createElement("p");
   if (turnCounter % 2 === 0 && event.innerText === "") {
     squareValue.innerText = player1.playerTile();
+    turnCounter++;
   } else if (turnCounter % 2 != 0 && event.innerText === "") {
     squareValue.innerText = player2.playerTile();
+    turnCounter++;
   }
-  turnCounter++;
+
   event.appendChild(squareValue);
 }
+
+const checkWin = () => {
+  if (
+    boardSquare[0].innerText === "X" &&
+    boardSquare[1].innerText === "X" &&
+    boardSquare[2].innerText === "X"
+  ) {
+    console.log("winner");
+  }
+};
 boardSquare.forEach((square) => {
   square.addEventListener("click", function () {
     clickEvent(square);
+    checkWin();
   });
 });
