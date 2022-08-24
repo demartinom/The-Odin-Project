@@ -40,29 +40,31 @@ bookForm.addEventListener("submit", function (e) {
 const createCard = (book) => {
   let newCard = document.createElement("div");
   newCard.setAttribute("class", "book-card");
-  newCard.innerHTML = `Name: ${book.title} <br> Author: ${book.author} <br> # of pages: ${book.pages} <br> Have I read it?: ${book.read} `;
+  // let readToggle = document.createElement("input");
+  // readToggle.setAttribute("type", "checkbox");
+  // readToggle.setAttribute("class", "read-toggle");
+  newCard.innerHTML = `Name: ${book.title} <br> Author: ${book.author} <br> # of pages: ${book.pages} <br> Have I read it?: ${book.read}`;
+  // newCard.appendChild(readToggle);
   libContainer.appendChild(newCard);
-  let readToggle = document.createElement("input");
-  readToggle.setAttribute("type", "checkbox");
-  readToggle.setAttribute("class", "read-toggle");
-
-  newCard.appendChild(readToggle);
   let deletebutton = document.createElement("button");
+  deletebutton.setAttribute("class", "delete-button");
   deletebutton.innerText = "Delete Book";
   newCard.appendChild(deletebutton);
   deletebutton.addEventListener("click", function () {
     newCard.remove();
-    let readToggle = document.querySelectorAll(".read-toggle");
-    readToggle.forEach((click) => {
-      click.addEventListener("click", function () {
-        if ((click.checked = true)) {
-          book.read = "read";
-        } else {
-          book.read = "not read";
-        }
-      });
-    });
   });
+  // let switchButton = document.querySelectorAll(".read-toggle");
+  // switchButton.forEach((click) => {
+  //   click.addEventListener("click", function () {
+  //     if (click.checked) {
+  //       book.read = "read";
+  //       console.log(book.read);
+  //     } else {
+  //       book.read = "not read";
+  //       console.log(book.read);
+  //     }
+  //   });
+  // });
 };
 
 const hobbit = new Book("The Hobbit", "Tolkein", "100", "read");
