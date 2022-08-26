@@ -1,8 +1,7 @@
 export default class toDo {
-  constructor(name, description, dueDate, priority) {
+  constructor(name, description, priority) {
     this.name = name;
     this.description = description;
-    this.dueDate = dueDate;
     this.priority = priority;
   }
 }

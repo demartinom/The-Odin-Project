@@ -3,6 +3,7 @@ export default function createCard(object) {
   container.setAttribute("class", "toDoCard");
   toDoTitle(container, object.name);
   toDoDescription(container, object.description);
+  toDoPriority(container, object.priority);
   document.body.appendChild(container);
 }
 
@@ -18,4 +19,11 @@ const toDoDescription = (div, title) => {
   description.innerText = title;
   description.setAttribute("class", "todo-description");
   div.appendChild(description);
+};
+
+const toDoPriority = (div, title) => {
+  const priority = document.createElement("p");
+  priority.innerText = title;
+  priority.setAttribute("class", "todo-priority");
+  div.appendChild(priority);
 };
