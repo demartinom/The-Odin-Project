@@ -7,6 +7,7 @@ export default function createCard(object) {
   toDoPriority(container, object.priority);
   deleteButton(container);
   document.body.appendChild(container);
+  saveToStorage(container.id, container.innerHTML);
 }
 
 const toDoTitle = (div, title) => {
@@ -37,6 +38,10 @@ const deleteButton = (div) => {
   deleteButton.innerText = "Delete Task";
   deleteButton.addEventListener("click", function () {
     deleteButton.parentElement.remove();
+    localStorage.removeItem(deleteButton.parentElement.id);
   });
   div.appendChild(deleteButton);
 };
+function saveToStorage(key, div) {
+  localStorage.setItem(key, div);
+}
