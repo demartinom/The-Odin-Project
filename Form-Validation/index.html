@@ -8,5 +8,45 @@
     <script src="script.js" defer></script>
     <title>Browser Form</title>
   </head>
-  <body></body>
+  <body>
+    <form action="" id="form-container">
+        <input
+          type="text"
+          placeholder="Country"
+          name="country"
+          id="country"
+          minlength="5"
+          required
+        />
+      <input
+        type="email"
+        name="email"
+        placeholder="Enter your email"
+        required
+      />
+      <input
+        type="text"
+        name="zipcode"
+        placeholder="Zip Code"
+        minlength="5"
+        maxlength="5"
+        required
+      />
+      <input
+        type="password"
+        placeholder="Create a Password"
+        name="password"
+        minlength="6"
+        required
+      />
+      <input
+        type="password"
+        name="validation"
+        minlength="6"
+        required
+        placeholder="Retype password"
+      />
+      <button type="submit">Submit</button>
+    </form>
+  </body>
 </html>
