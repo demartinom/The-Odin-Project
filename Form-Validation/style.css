@@ -1,0 +1,13 @@
+#form-container {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  gap: 10px;
+}
+#country:invalid{
+    color: green;
+}
+
+.error{
+    color: green;
+}
